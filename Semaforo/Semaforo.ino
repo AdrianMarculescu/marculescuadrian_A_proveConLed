@@ -1,9 +1,15 @@
 int rosso1=13;
 int giallo1=12;
+
 int verde1=11;
 int rosso2=10;
 int giallo2=9;
 int verde2=8;
+int ciclo=0;
+int giallo=0;
+int nLampeggi=0;
+int lampeggio=0;
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -18,25 +24,25 @@ pinMode(verde2, OUTPUT);
 //Chiedo quanto vuole durare il ciclo
 Serial.println("Quanto vuoi che duri il ciclo");
 while(Serial.available()==0) {} 
-int ciclo=Serial.readString().toInt();
+ciclo=Serial.readString().toInt();
 Serial.println("Hai inserito"+ciclo);
 
 //Chiedo quanto vuole durare il giallo
 Serial.println("Quanto vuoi che duri il giallo");
 while(Serial.available()==0) {} 
-int giallo=Serial.readString().toInt();
+giallo=Serial.readString().toInt();
 Serial.println("Hai inserito"+giallo);
 
 //Chiedo quanto vuole durare il lampeggio
 Serial.println("Quanto vuoi che duri il lampeggio del verde");
 while(Serial.available()==0) {} 
-int lampeggio=Serial.readString().toInt();
+lampeggio=Serial.readString().toInt();
 Serial.println("Hai inserito"+lampeggio);
 
 //Chiedo quanti lampeggi vuole
 Serial.println("Quanti lampeggi vuoi");
 while(Serial.available()==0) {}
-int nLampeggi=Serial.readString().toInt();
+nLampeggi=Serial.readString().toInt();
 Serial.println("Hai inserito"+nLampeggi);
 
 digitalWrite(rosso1, HIGH);
